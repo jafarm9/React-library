@@ -1,35 +1,34 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+// import { createRoot } from 'react-dom/client';
 import './style.css'
 
-
 var interval;
+
 class Timer extends React.Component {
     constructor(){
         super();
         this.state = {
-            time : new Date().toLocaleTimeString()
+            time : 5
         }
     }
-    componentDidMount(){                                           // انواع چرخه ی حیاط در ری اکت
-        interval = setInterval(()=>{
-            console.log("componentDidMount");
-            
+    componentDidMount(){                                        
+       interval =  setInterval(()=>{            
             this.setState({
-                time: new Date().toLocaleTimeString()          // انواع چرخه ی حیاط در ری اکت 
+                time : this.state.time -1    
             })
-        }, 1000)
+         
+        },1000)
     } 
-    componentDidUpdate(){                                             // انواع چرخه ی حیاط در ری اکت
-        console.log(this.state.time);
-        
+
+    componentDidUpdate(){
+        if (this.state.time === 0){
+            clearInterval(interval)
+        }
     }
-     render(){
-        console.log("componentDidMount");
-        
+     render(){        
         return(
             <h2 className='timer'>
-            it is  {this.state.time}
+              {this.state.time}
         </h2>
         )
      }
