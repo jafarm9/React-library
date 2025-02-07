@@ -3,8 +3,10 @@ import React from 'react';
 
 class Hello extends React.Component {
     render(){
+        console.log(this.props);
+        
         return(
-            <h1>ثانیه شمار معکوس</h1>
+            <h1>{this.props.title}</h1>
         )
     }
 }

@@ -25,3 +25,47 @@ body{
     background: black;
     color: rgb(1, 143, 105);
 }
+
+.btn_box{
+    display: flow-root;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.action_btn{
+    display: block;
+    width: 55px;
+    height: 55px;
+    border-radius: 30%;
+    background: rgb(240, 240, 232);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 200ms ease
+}
+.start_btn{
+    background-color: green;
+    margin: 20px;
+}
+.stop_btn{
+    background-color: red;
+    margin: 20px;
+
+}
+.reset_btn{
+    background-color: gray;
+}
+.stop_btn:hover{
+    box-shadow: 0 0 15px red;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.start_btn:hover{
+    box-shadow: 0 0 15px green;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}

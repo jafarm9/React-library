@@ -11,25 +11,36 @@ class Timer extends React.Component {
             time : 5
         }
     }
-    componentDidMount(){                                        
-       interval =  setInterval(()=>{            
+    startInterval = () =>{
+        interval =  setInterval(()=>{            
             this.setState({
-                time : this.state.time -1    
+                time : this.state.time -1 
             })
          
         },1000)
-    } 
+    }
+
+    stopInterval = ()=>{
+        clearInterval(interval);
+    }
 
     componentDidUpdate(){
         if (this.state.time === 0){
-            clearInterval(interval)
+            this.stopInterval();
         }
     }
      render(){        
         return(
+            <>
             <h2 className='timer'>
               {this.state.time}
         </h2>
+        <div className='btn_box'>
+            <span className='action_btn start_btn' onClick={this.startInterval}>Start</span>
+            <span className='action_btn stop_btn' onClick={this.stopInterval}>Stop</span>
+        </div>
+
+            </>
         )
      }
 }
